@@ -1,0 +1,199 @@
+/*
+As configurações de tema como `[theme] base="dark" backgroundColor="#202020"`
+são definidas no arquivo `.streamlit/config.toml` na raiz do seu projeto Streamlit.
+O CSS abaixo complementa o tema escuro, ajustando elementos específicos.
+*/
+
+/* Altera o fundo de TODOS os elementos principais do Streamlit para o cinza escuro */
+[data-testid="stAppViewContainer"] {
+    background-color: #202020 !important; /* Fundo do container principal do app */
+}
+[data-testid="stAppViewContainer"] > .main {
+    background-color: #202020 !important; /* Fundo da área de conteúdo principal */
+}
+[data-testid="stSidebar"] {
+    background-color: #202020 !important; /* Fundo da barra lateral */
+}
+html, body {
+    background-color: #202020 !important; /* Garante que o fundo da página inteira seja escuro */
+}
+
+
+/* Reseta o background dos blocos de coluna para transparente, evitando duplicação de "cards" */
+div[data-testid="stVerticalBlock"] {
+    background-color: transparent !important; /* Torna as colunas transparentes */
+    border: none !important; /* Remove qualquer borda padrão de colunas */
+    box-shadow: none !important; /* Remove qualquer sombra padrão de colunas */
+    min-width: 0;
+    flex-shrink: 1;
+}
+
+/* Estiliza especificamente o GRANDE CONTAINER que envolve todos os cards */
+div[data-testid="stVerticalBlock-main_wrapper_card"] {
+    background-color: #FFFFFF !important; /* Fundo branco para o container principal */
+    border: 2px solid #DDDDDD !important; /* Borda sutil para destacar */
+    border-radius: 10px !important; /* Bordas arredondadas */
+    padding: 50px !important; /* Mais padding para o container externo */
+    margin: 20px auto !important; /* Centraliza horizontalmente e adiciona margem top/bottom */
+    max-width: 900px; /* Largura máxima para simular uma página de documento */
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15) !important; /* Sombra mais pronunciada */
+}
+
+/* Estiliza especificamente os containers (nossos cards internos) que estão DENTRO das colunas */
+div[data-testid="stVerticalBlock"] > div[data-testid="stVerticalBlock"] {
+    background-color: #FFFFFF; /* Fundo branco para os cards internos */
+    border: 1px solid #FFFFFF; /* Borda branca da mesma cor */
+    border-radius: 8px; /* Bordas arredondadas */
+    padding: 80px !important; /* Espaço interno MAIOR para o conteúdo */
+    margin-bottom: 20px; /* Espaço entre os cards */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave para os cards */
+    box-sizing: border-box; /* CRUCIAL: Inclui padding e border na largura/altura total do elemento */
+}
+
+/* Cor do texto em geral para preto dentro dos cards */
+div[data-testid="stVerticalBlock"] > div[data-testid="stVerticalBlock"] h1,
+div[data-testid="stVerticalBlock"] > div[data-testid="stVerticalBlock"] h2,
+div[data-testid="stVerticalBlock"] > div[data-testid="stVerticalBlock"] h3,
+div[data-testid="stVerticalBlock"] > div[data-testid="stVerticalBlock"] h4,
+div[data-testid="stVerticalBlock"] > div[data-testid="stVerticalBlock"] h5,
+div[data-testid="stVerticalBlock"] > div[data-testid="stVerticalBlock"] h6,
+div[data-testid="stVerticalBlock"] > div[data-testid="stVerticalBlock"] p,
+div[data-testid="stVerticalBlock"] > div[data-testid="stVerticalBlock"] .st-emotion-cache-1215r6k,
+div[data-testid="stVerticalBlock"] > div[data-testid="stVerticalBlock"] .st-emotion-cache-1215r6k p,
+div[data-testid="stVerticalBlock"] > div[data-testid="stVerticalBlock"] .st-metric {
+    color: #000000 !important; /* Cor do texto preto para o conteúdo do card */
+}
+
+/* Garante que o texto dentro dos cards quebre corretamente para evitar overflow horizontal e seja justificado */
+div[data-testid="stMarkdownContainer"] {
+    text-align: justify !important; /* ALINHAMENTO JUSTIFICADO PARA O CONTEÚDO DE TEXTO */
+    overflow-wrap: break-word; /* Quebra palavras longas que não cabem */
+    word-wrap: break-word; /* Compatibilidade para browsers antigos */
+}
+
+/* Garante que qualquer parágrafo dentro do stMarkdownContainer também seja justificado */
+div[data-testid="stMarkdownContainer"] p {
+    text-align: justify !important;
+}
+
+/* Títulos em negrito */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    margin-bottom: 0px !important; /* Remove margem inferior padrão para alinhamento melhor */
+}
+
+/* Ajusta a cor dos títulos e métricas dentro dos cards */
+.st-emotion-cache-1l2d8v8 { /* Classe para o valor principal da métrica */
+    color: #000000 !important; /* Cor do texto preto para o valor da métrica */
+}
+
+/* Ajusta a cor do texto do indicador da métrica (ex: "5%") */
+.st-emotion-cache-q8s_l {
+    color: #000000 !important; /* Cor do texto preto para o indicador da métrica */
+}
+
+/* Estilo geral para todos os botões (tamanho e posicionamento base) */
+div.stButton > button {
+    display: block;
+    margin-left: auto; /* Empurra o botão para a direita */
+    margin-top: 15px; /* Espaço acima do botão um pouco menor */
+    border-radius: 5px;
+    padding: 8px 15px; /* Diminui o padding para um botão menor */
+    cursor: pointer;
+    font-size: 0.9em; /* Diminui um pouco o tamanho da fonte */
+    background-color: #007bff !important; /* Default: Azul para todos os botões */
+    color: white !important; /* Default: Texto branco para todos os botões */
+    border: none !important; /* Default: Sem borda */
+    box-shadow: none !important; /* Default: Sem sombra */
+}
+
+/* Estilo específico para o botão "Próximo Nível" (Card 5) - Verde com texto branco e borda */
+div[data-testid="stButton-card5_button"] > button {
+    background-color: #28a745 !important; /* Verde */
+    color: white !important; /* Texto branco */
+    border: 1px solid #1e7e34 !important; /* Borda verde escura */
+    box-shadow: none !important; /* Remove sombra padrão se houver */
+}
+
+/* Estilo específico para o TEXTO do botão "Próximo Nível" */
+div[data-testid="stButton-card5_button"] > button > div > p {
+    color: white !important;
+}
+
+/* Estilo para os estados :hover e :active do botão "Próximo Nível" */
+div[data-testid="stButton-card5_button"] > button:hover,
+div[data-testid="stButton-card5_button"] > button:active {
+    background-color: #218838 !important; /* Um verde um pouco mais escuro para hover/active */
+    color: white !important; /* Manter texto branco */
+    border-color: #1e7e34 !important; /* Manter borda verde escura */
+}
+/* Garante que o texto também mantenha a cor branca no hover/active */
+div[data-testid="stButton-card5_button"] > button:hover > div > p,
+div[data-testid="stButton-card5_button"] > button:active > div > p {
+    color: white !important;
+}
+
+
+/* Estilo específico para o botão "Baixar Relatório" (Card 2) - Sem fundo, sem borda, texto azul */
+div[data-testid="stButton-card2_button"] > button {
+    background-color: transparent !important; /* Sem fundo */
+    border: none !important; /* Sem borda */
+    box-shadow: none !important; /* Sem sombra */
+    color: #007bff !important; /* Texto azul */
+}
+
+/* Estilo específico para o TEXTO do botão "Baixar Relatório" */
+div[data-testid="stButton-card2_button"] > button > div > p {
+    color: #007bff !important;
+}
+
+/* Estilo para os estados :hover e :active do botão "Baixar Relatório" */
+div[data-testid="stButton-card2_button"] > button:hover,
+div[data-testid="stButton-card2_button"] > button:active {
+    color: #0056b3 !important; /* Um azul um pouco mais escuro para hover/active */
+    background-color: transparent !important; /* Manter fundo transparente */
+    border: none !important; /* Manter sem borda */
+}
+/* Garante que o texto também mude de cor no hover/active */
+div[data-testid="stButton-card2_button"] > button:hover > div > p,
+div[data-testid="stButton-card2_button"] > button:active > div > p {
+    color: #0056b3 !important;
+}
+
+
+/* Garante que o gráfico do Plotly seja exibido corretamente */
+.st-emotion-cache-sy31q2 {
+    background-color: transparent !important;
+}
+
+/* Estilo para o título principal do app */
+h1.st-emotion-cache-1r6dm7m { /* Selecionador mais específico para o h1 do st.title */
+    color: #FFFFFF !important; /* Título principal em branco para contrastar com o fundo escuro */
+}
+
+/* Posiciona o container de botões do gráfico no canto inferior direito */
+div[data-testid="stVerticalBlock-graph_buttons_container"] {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: flex-end !important; /* Alinha os botões à direita */
+    align-items: center !important;
+    gap: 10px !important; /* Espaço entre os botões */
+    margin-top: 15px !important; /* Espaço entre o texto e os botões */
+}
+
+/* Estilo específico para o botão de alternar gráficos - Sem fundo, sem borda, texto azul */
+div[data-testid="stButton-btn_alternar_grafico"] > button {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    color: #007bff !important;
+}
+/* Garante que o texto também tenha a cor azul no hover/active */
+div[data-testid="stButton-btn_alternar_grafico"] > button > div > p {
+    color: #007bff !important;
+}
+/* Efeito de hover/active mais escuro para o texto */
+div[data-testid="stButton-btn_alternar_grafico"] > button:hover > div > p,
+div[data-testid="stButton-btn_alternar_grafico"] > button:active > div > p {
+    color: #0056b3 !important;
+}
