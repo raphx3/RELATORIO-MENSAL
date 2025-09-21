@@ -1,1 +1,15 @@
+[theme]
+# Define o tema base como escuro
+base="dark"
+# Define a cor de fundo principal do aplicativo
+backgroundColor="#202020"
+# Define a cor primária para elementos como botões, seletores, etc.
+# Usei um azul que combina com os botões "Baixar Relatório"
+primaryColor="#007bff"
+# Define a cor do texto para o tema escuro
+textColor="#FAFAFA"
+# Define a cor de fundo de elementos secundários (como containers de chat)
+secondaryBackgroundColor="#333333"
+# Define a cor da fonte para botões e outros widgets interativos
+font="sans serif"
 
