@@ -1,6 +1,3 @@
-Ótimo, aqui está o README.md pronto para ser copiado e colado no seu repositório do GitHub. Ele usa as formatações de Markdown para uma apresentação visual limpa e profissional.
-
-README.md
 Relatório de Monitoramento Ambiental Interativo
 Este projeto é um painel de controle interativo (dashboard) construído com Streamlit para visualizar dados de monitoramento ambiental. O relatório simula a análise da qualidade da água e das correntes oceânicas em uma área costeira próxima a Vitória, Espírito Santo.
 
